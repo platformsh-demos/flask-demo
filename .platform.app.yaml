@@ -42,8 +42,8 @@ hooks:
         fi
 
 web:
-    # upstream:
-    #     socket_family: unix
+    upstream:
+        socket_family: unix
     commands:
         start: |
             ############### PIPENV ###################
