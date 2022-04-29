@@ -43,10 +43,14 @@ hooks:
     deploy: |
         ############### PIPENV ###################
         if [ "$PACKAGE_MANAGER" = "pipenv" ]; then
-            pipenv run flask init-db
+            if [ ! -f "instance/flaskr.sqlite" ]; then
+                pipenv run flask init-db
+            fi
         ############### POETRY ###################
         elif [ "$PACKAGE_MANAGER" = "poetry" ]; then
-            poetry run flask init-db
+            if [ ! -f "instance/flaskr.sqlite" ]; then
+                poetry run flask init-db
+            fi
         fi   
 
 web:
