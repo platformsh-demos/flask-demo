@@ -29,6 +29,14 @@ tests = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)"
 tests_no_zope = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "mypy", "pytest-mypy-plugins", "cloudpickle"]
 
 [[package]]
+name = "blackfire"
+version = "1.11.0"
+description = "Blackfire Python SDK"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "cffi"
 version = "1.15.0"
 description = "Foreign Function Interface for Python calling C code."
@@ -376,8 +384,8 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.9"
-content-hash = "9b3ecfa5bf7b6c8fcab5ca6b3206748c7945fb5eb403f320be290026efff65bf"
+python-versions = "^3.8"
+content-hash = "ca5e3b0961eab7501d66e82cb6f5b1818edd000e993abd7b33a9617e39fcaa93"
 
 [metadata.files]
 async-timeout = [
@@ -391,6 +399,52 @@ atomicwrites = [
 attrs = [
     {file = "attrs-21.4.0-py2.py3-none-any.whl", hash = "sha256:2d27e3784d7a565d36ab851fe94887c5eccd6a463168875832a1be79c82828b4"},
     {file = "attrs-21.4.0.tar.gz", hash = "sha256:626ba8234211db98e869df76230a137c4c40a12d72445c45d5f5b716f076e2fd"},
+]
+blackfire = [
+    {file = "blackfire-1.11.0-cp27-cp27m-macosx_10_14_x86_64.whl", hash = "sha256:f3d23c45d4731552716d7dc6711c52deaddacb6212ecc9b2d67dd50c4b58bfbb"},
+    {file = "blackfire-1.11.0-cp27-cp27m-manylinux1_x86_64.whl", hash = "sha256:bafad767a863fefe149774d37b6dd690348d84003554795251887aef631b95ab"},
+    {file = "blackfire-1.11.0-cp27-cp27m-manylinux2010_x86_64.whl", hash = "sha256:80c583495f7268efa8f6e64469874706f91d4b0b507a30d5ecb9cd3dbe99824b"},
+    {file = "blackfire-1.11.0-cp27-cp27m-win32.whl", hash = "sha256:908de8d0842d5f682f3888adf31ab3b6158c28ffd712a70aeddd8aa4625c8d20"},
+    {file = "blackfire-1.11.0-cp27-cp27m-win_amd64.whl", hash = "sha256:b392695bd1905550662c9799d3a7d4e279dd78b11ff4bff4539d8cc9759dd0c3"},
+    {file = "blackfire-1.11.0-cp27-cp27mu-manylinux1_x86_64.whl", hash = "sha256:f9a60704af5ad2cd944f15214af09e90237e87837a1e04476472737ffa7f88ab"},
+    {file = "blackfire-1.11.0-cp27-cp27mu-manylinux2010_x86_64.whl", hash = "sha256:eb87f9341b3ceeff9b58fa1a32de67e3b3525b4f328efa85bf06c0e5b4c80cef"},
+    {file = "blackfire-1.11.0-cp310-cp310-macosx_10_14_x86_64.whl", hash = "sha256:bdeada4e3ad0b29e1be96d583a1f91dc3ab6539a6de4c97ad8cb42fc8b91353b"},
+    {file = "blackfire-1.11.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:f134c1fb0347d2a4b6d8dbc464e76e1530e530676a4804d2b75b21559999b544"},
+    {file = "blackfire-1.11.0-cp310-cp310-manylinux1_x86_64.whl", hash = "sha256:181a2ad4b739e0b4e30611329b8fe27abbae20bf0a7c30e4892f4b919972a681"},
+    {file = "blackfire-1.11.0-cp310-cp310-manylinux2010_x86_64.whl", hash = "sha256:06a1064d277bdf7a846746d5bb652901b3518069874a4b827bec68cab6fa716d"},
+    {file = "blackfire-1.11.0-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:264a62c9514ca4b9521ade88e2f4f3b962ba26aaedd31695419a3105cb11ac3a"},
+    {file = "blackfire-1.11.0-cp34-cp34m-macosx_10_14_x86_64.whl", hash = "sha256:c7d6274c0a26a98a076f3158abb06ab6a8aa5d77ab3d2e8438fa13124d2229f0"},
+    {file = "blackfire-1.11.0-cp34-cp34m-win32.whl", hash = "sha256:3ec98536831a536d6b813b9aaf7b942304668898651cfbc8870949fbf8714595"},
+    {file = "blackfire-1.11.0-cp35-cp35m-macosx_10_14_x86_64.whl", hash = "sha256:7adfebc457c145e645f41237e174715e123ba768327221afe6a8ab8d9e3eace5"},
+    {file = "blackfire-1.11.0-cp35-cp35m-manylinux1_x86_64.whl", hash = "sha256:1b954d6fc6bd6b1edf6b08cb5590710d4a4072ffa933be0f5c53cb86006ad193"},
+    {file = "blackfire-1.11.0-cp35-cp35m-manylinux2010_x86_64.whl", hash = "sha256:6bd44ac5a8b7a8a98602b8586d1f46635bf60b998fa60121e70db4de82b5ea2b"},
+    {file = "blackfire-1.11.0-cp35-cp35m-win32.whl", hash = "sha256:dc1c4571cf046fdee4afdd6aaec2f900083b13020c95c2f5ed85767f10f70ca1"},
+    {file = "blackfire-1.11.0-cp35-cp35m-win_amd64.whl", hash = "sha256:e7fa4d88ba06014c0a86209313b2f73a80280a78b5601ddfce451e187540ca0d"},
+    {file = "blackfire-1.11.0-cp36-cp36m-macosx_10_14_x86_64.whl", hash = "sha256:ee0822c6175d7851ceaffd36bc7c688546810cbbc7578d420599b7e535bcbd62"},
+    {file = "blackfire-1.11.0-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:2281a3e9b8c643dd816f30b0e8b0b58e6e6395cbdd0698f7b9bbafa71798b34a"},
+    {file = "blackfire-1.11.0-cp36-cp36m-manylinux2010_x86_64.whl", hash = "sha256:d680f6a4e69c4b3b7c6b33168887907f67deee64348f2f1cd85e9d25fc892480"},
+    {file = "blackfire-1.11.0-cp36-cp36m-musllinux_1_1_x86_64.whl", hash = "sha256:f7cb8bb9089a0ffa852eec9d625e330ef445218931aaf6d08f046684ad98ef14"},
+    {file = "blackfire-1.11.0-cp36-cp36m-win32.whl", hash = "sha256:af8545cdf6806c054915c56ea2901ff77488575b8435a089b6ad5d16cf738ace"},
+    {file = "blackfire-1.11.0-cp36-cp36m-win_amd64.whl", hash = "sha256:549949fd1d20b279d4b9b98db7f0d01d81e631482d391cde6a8ab7b00bf33584"},
+    {file = "blackfire-1.11.0-cp37-cp37m-macosx_10_14_x86_64.whl", hash = "sha256:0fd22173fd57270335cf585bcfc9848eae9d976fe44a320b2cab4216934d14d6"},
+    {file = "blackfire-1.11.0-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:f30c33c01526b40619081e4b71cfd6569d03037182415422a6cce8d4a4224fbf"},
+    {file = "blackfire-1.11.0-cp37-cp37m-manylinux2010_x86_64.whl", hash = "sha256:c4b0583dd7d3c43a346c23ae7b66afc2ef2f482af673e8c180f46eaa19791e96"},
+    {file = "blackfire-1.11.0-cp37-cp37m-musllinux_1_1_x86_64.whl", hash = "sha256:73a91375937ce0a4b80f358da3fd3d86f98ed201b5bb4d9ee416cbf91044a8fe"},
+    {file = "blackfire-1.11.0-cp37-cp37m-win32.whl", hash = "sha256:68bfc2253bf19bdb4da468fe13306e63bbb2d6a808c93731ea0773b8b690c17e"},
+    {file = "blackfire-1.11.0-cp37-cp37m-win_amd64.whl", hash = "sha256:19a3dce3afd1e259976e92e1fb99ba66659d545aa25810a4252d373331a52695"},
+    {file = "blackfire-1.11.0-cp38-cp38-macosx_10_14_x86_64.whl", hash = "sha256:a8681d5c0107e302f0edde649217191b4113a7ffd21cac059ce4df1fb660e6b4"},
+    {file = "blackfire-1.11.0-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:5ab446ba3e3dd8e3d62d2791aab313cd9fe334a373d6175894b0afdc4abf51de"},
+    {file = "blackfire-1.11.0-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:85e1e558c8b4adcd3c5a4ffb99b85c23669e192737d62c2b8752ddf70b8afb0f"},
+    {file = "blackfire-1.11.0-cp38-cp38-manylinux2010_x86_64.whl", hash = "sha256:5f22d88cf1ea54fa28c65d6f1df54374f85704201b2a3d1e66a682aeefa4f731"},
+    {file = "blackfire-1.11.0-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:33626e6f27fbe906774258a620fc507533311c6fbc59cf638e360e85448026e6"},
+    {file = "blackfire-1.11.0-cp38-cp38-win32.whl", hash = "sha256:d29bf028f51be902d01549e2eb75b4716231c8a77cde5c72c644f59d28ee69f8"},
+    {file = "blackfire-1.11.0-cp38-cp38-win_amd64.whl", hash = "sha256:421546666ed9d52ea9be841911826ed04fef449620afa42481a01a98cd8b9eda"},
+    {file = "blackfire-1.11.0-cp39-cp39-macosx_10_14_x86_64.whl", hash = "sha256:7f5b85c75d5ef136cd5215e1c25006babf1084155d531cef39e8bf667362908c"},
+    {file = "blackfire-1.11.0-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:6fa4b095259eb9275e9cc04a45fab5ef8788682fed0a3caea8b1a7e23a93a696"},
+    {file = "blackfire-1.11.0-cp39-cp39-manylinux1_x86_64.whl", hash = "sha256:8abcd1af78842a9e058f483f43959fc7c3eae491df3f2d2cd38e9f89f9469e83"},
+    {file = "blackfire-1.11.0-cp39-cp39-manylinux2010_x86_64.whl", hash = "sha256:8d4b4d64dbe83e4a7f964455ee23de3319002f207a2ee8ce62eb694d35e7e260"},
+    {file = "blackfire-1.11.0-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:bf5f34682272d32693c117f016e5bd107fb8c91453956a377c9609a9d80875e6"},
+    {file = "blackfire-1.11.0-cp39-cp39-win_amd64.whl", hash = "sha256:1beb26fa72a7f52f9d7d5e3906acee685f356c973b306101afa514375f24640d"},
 ]
 cffi = [
     {file = "cffi-1.15.0-cp27-cp27m-macosx_10_9_x86_64.whl", hash = "sha256:c2502a1a03b6312837279c8c1bd3ebedf6c12c4228ddbad40912d671ccc8a962"},
