@@ -49,13 +49,13 @@ web:
                 if [ -f "instance/flaskr.sqlite" ]; then
                     pipenv run flask init-db
                 fi
-                pipenv run flask run
+                pipenv run flask run -p $PORT
             ############### POETRY ###################
             elif [ "$PACKAGE_MANAGER" = "poetry" ]; then
                 if [ -f "instance/flaskr.sqlite" ]; then
                     pipenv run flask init-db
                 fi
-                poetry run flask run
+                poetry run flask run -p $PORT
             fi
 
 # The relationships of the application with services or other applications.
