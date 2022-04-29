@@ -1,5 +1,10 @@
 # Blackfire.
 export BLACKFIRE_AGENT_SOCKET="tcp://blackfire.platform.sh:8307"
+
+export BLACKFIRE_SERVER_ID=0c9cdf0e-0ed3-4337-b155-e1d19439b44c
+export BLACKFIRE_SERVER_TOKEN=6b9cccf6216d0af41de22f074e52c5973cd1e6f5cc862f6589832f12e7b1c93f
+export BLACKFIRE_CLIENT_ID=98287b57-1f00-417f-a10c-35384a022c3a
+export BLACKFIRE_CLIENT_TOKEN=db121619890b2468cc75b214d59a0d2873ca5c18dc95aa2cc0b734c32dabd489
 # PostgreSQL.
 export DB_NAME=$(echo $PLATFORM_RELATIONSHIPS | base64 --decode | jq -r ".database[0].path")
 export DB_HOST=$(echo $PLATFORM_RELATIONSHIPS | base64 --decode | jq -r ".database[0].host")
