@@ -1,16 +1,19 @@
 [[source]]
+name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-name = "pypi"
-
-[packages]
-flask = ">=2.0.0"
-redis = "*"
-pymysql = "*"
-gevent = "*"
-platformshconfig = "~=2.0"
 
 [dev-packages]
 
+[packages]
+flask = ">=2.0.0"
+gevent = "*"
+platformshconfig = "~=2.0"
+pymysql = "*"
+pytest = "*"
+redis = "*"
+coverage = "*"
+flaskr = {editable = true, path = "."}
+
 [requires]
-python_version == "3.9"
+"python_version =" = "3.9"

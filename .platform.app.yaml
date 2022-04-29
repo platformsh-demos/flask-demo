@@ -1,16 +1,13 @@
-# This file describes an application. You can have multiple applications
-# in the same project.
-#
-# See https://docs.platform.sh/user_guide/reference/platform-app-yaml.html
-
 # The name of this app. Must be unique within a project.
 name: flask
 
 # The runtime the application uses.
-type: "python:3.9"
+type: 'python:3.9'
 
 variables:
     env:
+        FLASK_APP: flaskr
+        FLASK_ENV: production
         PACKAGE_MANAGER: poetry
         PIP_VERSION: 22.0.4
         PIPENV_VERSION_BUILD: 2022.4.21
@@ -38,10 +35,6 @@ hooks:
             # Install Poetry.
             POETRY_INSTALLER='https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py'
             curl -sSL $POETRY_INSTALLER | POETRY_VERSION=$POETRY_VERSION python -
-            # Source the Poetry command.
-            # . ~/.poetry/env
-            # Add Poetry to .bash_profile, so it's available during SSH.
-            # echo ". $PLATFORM_APP_DIR/.poetry/env" >> ~/.bash_profile
             # Check lockfile and install dependencies.
             poetry env use system
             poetry check
@@ -53,22 +46,30 @@ web:
         start: |
             ############### PIPENV ###################
             if [ "$PACKAGE_MANAGER" = "pipenv" ]; then
-                pipenv run python server.py
+                if [ -f "instance/flaskr.sqlite" ]; then
+                    pipenv run flask init-db
+                fi
+                pipenv run flask run
             ############### POETRY ###################
             elif [ "$PACKAGE_MANAGER" = "poetry" ]; then
-                poetry run python server.py
+                if [ -f "instance/flaskr.sqlite" ]; then
+                    pipenv run flask init-db
+                fi
+                poetry run flask run
             fi
 
-# The size of the persistent disk of the application (in MB).
-disk: 1024
 # The relationships of the application with services or other applications.
-#
-# The left-hand side is the name of the relationship as it will be exposed
-# to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
-# side is in the form `<service name>:<endpoint name>`.
 relationships:
     database: "db:mysql"
     rediscache: "cache:redis"
+
+# The size of the persistent disk of the application (in MB).
+disk: 1024
+
+mounts:
+    'instance':
+        source: local
+        source_path: instance
 
 # The configuration of app when it is exposed to the web.
 
@@ -77,4 +78,3 @@ source:
     auto-update:
       command: |
         curl -fsS https://raw.githubusercontent.com/platformsh/source-operations/main/setup.sh | { bash /dev/fd/3 sop-autoupdate; } 3<&0
-    
