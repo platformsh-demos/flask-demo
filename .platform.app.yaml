@@ -58,15 +58,11 @@ web:
         start: |
             ############### PIPENV ###################
             if [ "$PACKAGE_MANAGER" = "pipenv" ]; then
-                if [ -f "instance/flaskr.sqlite" ]; then
-                    pipenv run flask init-db
-                fi
+                pipenv run flask init-db
                 pipenv run flask run -p $PORT
             ############### POETRY ###################
             elif [ "$PACKAGE_MANAGER" = "poetry" ]; then
-                if [ -f "instance/flaskr.sqlite" ]; then
-                    poetry run flask init-db
-                fi
+                poetry run flask init-db
                 poetry run flask run -p $PORT
             fi
 
