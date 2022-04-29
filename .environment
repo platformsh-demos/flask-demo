@@ -1,7 +1,7 @@
 # Poetry.
-if [[ "$PACKAGE_MANAGER" = "poetry" ]]; then
-    . $PLATFORM_APP_DIR/.poetry/env
-fi
+# if [[ "$PACKAGE_MANAGER" = "poetry" ]]; then
+#     . $PLATFORM_APP_DIR/.poetry/env
+# fi
 # Blackfire.
 export BLACKFIRE_AGENT_SOCKET="tcp://blackfire.platform.sh:8307"
 # PostgreSQL.
