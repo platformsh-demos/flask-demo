@@ -8,7 +8,7 @@ variables:
     env:
         FLASK_APP: flaskr
         FLASK_ENV: production
-        PACKAGE_MANAGER: pipenv
+        PACKAGE_MANAGER: poetry
         PIP_VERSION: 22.0.4
         PIPENV_VERSION_BUILD: 2022.4.21
         POETRY_VERSION: 1.1.13
@@ -40,6 +40,14 @@ hooks:
             poetry check
             poetry install
         fi
+    deploy: |
+        ############### PIPENV ###################
+        if [ "$PACKAGE_MANAGER" = "pipenv" ]; then
+            pipenv run flask init-db
+        ############### POETRY ###################
+        elif [ "$PACKAGE_MANAGER" = "poetry" ]; then
+            poetry run flask init-db
+        fi   
 
 web:
     upstream:
@@ -48,11 +56,9 @@ web:
         start: |
             ############### PIPENV ###################
             if [ "$PACKAGE_MANAGER" = "pipenv" ]; then
-                pipenv run flask init-db
                 pipenv run gunicorn -w 4 -b 0.0.0.0:$PORT flaskr:app
             ############### POETRY ###################
             elif [ "$PACKAGE_MANAGER" = "poetry" ]; then
-                poetry run flask init-db
                 poetry run gunicorn -w 4 -b 0.0.0.0:$PORT flaskr:app
             fi
 
@@ -68,8 +74,6 @@ mounts:
     'instance':
         source: local
         source_path: instance
-
-# The configuration of app when it is exposed to the web.
 
 source:
   operations:
