@@ -14,6 +14,7 @@ pytest = "*"
 redis = "*"
 coverage = "*"
 flaskr = {editable = true, path = "."}
+gunicorn = "*"
 
 [requires]
 "python_version =" = "3.9"
