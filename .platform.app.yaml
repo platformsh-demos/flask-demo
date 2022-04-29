@@ -56,10 +56,9 @@ web:
         start: |
             ############### PIPENV ###################
             if [ "$PACKAGE_MANAGER" = "pipenv" ]; then
-                pipenv run gunicorn -w 4 -b unix:$SOCKET flaskr:app
+                pipenv run gunicorn -w 4 -b unix:$SOCKET "flaskr:create_app()"
             ############### POETRY ###################
             elif [ "$PACKAGE_MANAGER" = "poetry" ]; then
-                poetry run flask init-db
                 poetry run gunicorn -w 4 -b unix:$SOCKET "flaskr:create_app()"
             fi
 
