@@ -6,7 +6,7 @@
 
 <p align="center">
 <a href="https://flask.palletsprojects.com/en/2.1.x/">
-<img src="flask.png">
+<img src="header.svg">
 </a>
 </p>
 

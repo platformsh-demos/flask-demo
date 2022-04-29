@@ -41,7 +41,7 @@ hooks:
             # Source the Poetry command.
             # . ~/.poetry/env
             # Add Poetry to .bash_profile, so it's available during SSH.
-            echo ". $PLATFORM_APP_DIR/.poetry/env" >> ~/.bash_profile
+            # echo ". $PLATFORM_APP_DIR/.poetry/env" >> ~/.bash_profile
             # Check lockfile and install dependencies.
             poetry env use system
             poetry check
